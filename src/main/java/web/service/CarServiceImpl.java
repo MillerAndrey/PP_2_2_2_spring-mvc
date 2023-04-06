@@ -1,11 +1,9 @@
-package web.Service;
+package web.service;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import web.Model.Car;
+import web.model.Car;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,10 +11,6 @@ import java.util.stream.Collectors;
 public class CarServiceImpl implements CarService {
 
     private final List<Car> carsList = new ArrayList<>();
-
- /*   public CarServiceImpl() {
-        carsList = Arrays.asList(new Car("BMW", "black", 120_200));
-    }*/
 
     {
         carsList.add(new Car("BMW", "black", 120_200));
@@ -31,6 +25,6 @@ public class CarServiceImpl implements CarService {
         if (count == 0) {
             return carsList;
         }
-        return carsList.stream().limit(count>=5?carsList.size():count).collect(Collectors.toList());
+        return carsList.stream().limit(count >= 5 ? carsList.size() : count).collect(Collectors.toList());
     }
 }
